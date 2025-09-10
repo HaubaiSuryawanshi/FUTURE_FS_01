@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Haubai Suryawanshi</title>
+  <style>
+    /* General Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #0d1b2a;
+      text-align: center;
+      padding: 40px 20px;
+      color: white;
+    }
+    .navbar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .navbar h1 {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    /* Typing Effect */
+    .typing {
+      width: 38ch;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00c6ff;
+      animation: typing 4s steps(38) infinite alternate,
+                 blink .7s step-end infinite;
+      margin: auto;
+      font-size: 15px;
+      color: #cfd8dc;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 38ch; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .nav-links {
+
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .nav-links a {
+color: #0bec8ee3;
+      /*color: #00c6ff;*/
+      
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+     background: #00c6ff;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Section General */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #0d1b2a;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #00c6ff;
+      margin: 10px auto;
+      border-radius: 3px;
+    }
+
+    /* About */
+    .about {
+     /* background: #e0e0e0;*/
+      text-align: center;
+      padding: 40px 20px;
+      border-radius: 10px;
+    }
+    .about p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* Education */
+    .education ul {
+      list-style: none;
+      text-align: center;
+      padding: 12px 25px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    /* Skills */
+    .skills ul {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .skills li {
+      list-style: none;
+      background: #0bec8ee3;
+      padding: 12px 25px;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .skills li:hover {
+      background-color: #00c6ff;
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgb(249, 4, 176);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project {
+     /* background: #fff;*/
+     background: #0bec8ee3;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project:hover { transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgb(249, 4, 176);
+      background: #00c6ff;
+   }
+    .project h3 { color: #0d1b2a; margin-bottom: 10px; }
+
+    /* Certificates */
+    .certificates ul {
+      
+      list-style: none;
+      text-align: center;
+      line-height: 2;
+    }
+    .certificates li {
+      background: #eee;
+      margin: 8px auto;
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 15px;
+      font-weight: bold;
+      transition: 0.3s;
+      background: #0bec8ee3;
+    }
+    .certificates li:hover {
+      box-shadow: 0 4px 10px rgb(249, 4, 176);
+      background: #00c6ff;
+      color: white;
+    }
+
+    /* Contact */
+    .contact ul {
+      list-style: none;
+      text-align: center;
+      line-height: 2;
+    }
+ /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0d1b2a;
+      color: #fff;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <img src="phto.jpg" alt="Profile Photo">
+    <h1>Suryawanshi Haubai Chandrakant</h1>
+    <p class="typing">Computer Science Student | Aspiring Full Stack Developer</p>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about" class="about reveal">
+    <h2>About Me</h2>
+    <p>I am an enthusiastic and detail-oriented Computer Science graduate with a strong foundation in Python, Java, and Web Development. As a fresher, I am eager to apply my academic knowledge to real-world projects, contribute to a dynamic team, and grow as a software professional.</p>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="education reveal">
+    <h2>Education</h2>
+    <ul>
+      <li>10th from KGBV Biloli</li>
+      <li>12th from SSC JR College Sagroli</li>
+      <li>BA from YCMOUN</li>
+      <li>B.Sc CS (TY) from SRTMUN</li>
+    </ul>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="skills reveal">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Django</li>
+      <li>SQL</li>
+      <li>GitHub</li>
+      <li>C</li>
+      <li>C++</li>
+      <li>Java</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects reveal">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>A personal website to showcase my projects and skills.</p>
+      </div>
+      <div class="project">
+        <h3>E-commerce Store</h3>
+        <p>A simple online store with shopping cart functionality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates" class="certificates reveal">
+    <h2>Certificates</h2>
+    <ul>
+      <li>HTML - Infosys Springboard</li>
+      <li>CSS - Infosys Springboard</li>
+      <li>JavaScript - Infosys Springboard</li>
+      <li>Python - Coding Seekho</li>
+      <li>Django - Coding Seekho</li>
+      <li>Web Design & Development - Skill India</li>
+      <li>Cyber Security - Skill India</li>
+      <li>Soft Skills - TCS</li>
+      <li>Full Stack Development Internship - CodeAlpha</li>
+      <li>Full Stack Development Internship - Future Intern</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact reveal">
+    <h2>Contact Me</h2>
+    <ul>
+      <li>Email: <a href="mailto:haubaisuryawanshi@gmail.com">haubaisuryawanshi@gmail.com</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/haubai-suryawanshi-43a214380" target="_blank">haubaisuryawanshi</a></li>
+      <li>GitHub: <a href="https://github.com/HaubaiSuryawanshi" target="_blank">HaubaiSuryawanshi</a></li>
+      <li>Mobile: 9529026155</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Suryawanshi Haubai | All Rights Reserved</p>
+  </footer>
+
+  <!-- JS for Scroll Animation -->
+  <script>
+    function reveal() {
+      let reveals = document.querySelectorAll(".reveal");
+      for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal(); // run once on load
+  </script>
+</body>
+</html>
